@@ -1,11 +1,13 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
+const mode = process.env.NODE_ENV || 'development';
+
 module.exports = {
 	entry: './src/js/app.js',
-	mode: 'development',
+	mode: mode,
 	output: {
-		path: __dirname+'/public',
+		path: __dirname + '/public',
 		filename: 'bundle.js',
 	},
   plugins: [new HtmlWebpackPlugin({
@@ -42,6 +44,22 @@ module.exports = {
           "sass-loader",
         ],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        use: ['file-loader']
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
+        ]
+      }
     ]
   }
 };

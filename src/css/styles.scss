@@ -1,3 +1,168 @@
+@import './reset.css';
+
+* {
+  font-size: 14px;
+}
+
+:root {
+  --font-xs: .9rem;
+  --font-sm: 1rem;
+  --font-md: 1.2rem;
+  --font-lg: 1.4rem;
+  --font-xl: 1.7rem;
+  --font-xxl: 2rem;
+  --font-xxxl: 2.5rem;
+  --font-xxxxl: 3rem;
+  --font-xxxxxl: 4rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: bisque;
+  background-color: #222;
+}
+
+main, header, footer {
+  width: 980px;
+  margin: 0 auto;
+}
+
+header#header {
+  display: flex;
+  justify-content: space-between;
+  padding: 80px 0;
+
+  figure {
+    width: 200px;
+    height: 260px;
+
+    img {
+      filter: grayscale(.9);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+#navigation {
+  list-style: none;
+
+  li {
+    text-align: right;
+
+    a {
+      color: white;
+      font-size: var(--font-lg);
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+}
+
+// Sections
+section {
+  display: flex;
+  margin: 4rem 0;
+
+  span.id {
+    font-size: var(--font-xxxxxl);
+    color: #777;
+  }
+
+  h1 {
+    font-size: var(--font-xxxxl);
+    color: #CCC;
+    text-transform: uppercase;
+    padding: .8rem .5rem;
+    margin-bottom: 4rem;
+  }
+}
+
+#first-section {
+  flex-direction: column;
+  align-items: flex-end;
+  width: 500px;
+  margin-left: 300px;
+  margin-top: -100px;
+
+  .content {
+    p {
+      font-size: var(--font-md);
+      text-align: right;
+      color: white;
+    }
+  }
+}
+
+// Second section
+#second-section {
+  .item {
+    display: flex;
+    padding: 0 150px 0 .5rem;
+    margin-bottom: 2rem;
+
+    & > div {
+      flex: 1;
+
+      h5 {
+        font-size: var(--font-lg);
+        text-align: right;
+        color: #CCC;
+        padding-bottom: .2rem;
+      }
+  
+      h6 {
+        font-size: var(--font-md);
+        text-align: right;
+        color: #777;
+      }
+    }
+
+    p {
+      font-size: var(--font-md);
+      flex: 2;
+      text-indent: 1rem;
+      color: #EEE;
+      padding-left: 2rem;
+    }
+  }
+}
+
+// Third section
+#third-section {
+  .find-me {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+    padding: 0 150px;
+
+    a {
+      font-size: var(--font-lg);
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        color: #DDD;
+        transition: color ease-in-out .3s;
+      }
+
+      span {
+        margin-left: .5rem;
+      }
+    }
+  }
+}
+
+
+// Footer
+footer {
+  padding: 3rem 0;
+
+  p {
+    text-align: center;
+    color: white;
+  }
 }
